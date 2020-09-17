@@ -1,0 +1,12 @@
+#routesBar{
+    background-color: black;
+}
+
+#routesBar > a{
+    background-color: black;
+    color: blue;
+}
+
+a{
+    font-size: 1.5em
+}

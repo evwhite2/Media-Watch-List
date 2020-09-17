@@ -1,0 +1,43 @@
+<form 
+[formGroup]="form"
+(ngSubmit)="onSubmit(form.value)">
+        <div class="field">
+            <label for="medium">Medium</label><br>
+            <select name="medium" formControlName="medium">
+                <option *ngFor="let medium of lookupLists.mediums" [value]="medium">{{medium}}</option>
+            </select>
+        </div>
+        <div class="field">
+            <label for="name">Name</label><br>
+            <input type="text" name="name" id="name" formControlName="name">
+        </div>
+        <div class="field">
+            <label for="genre">Genre</label><br>
+            <select name="genre" id="genre" formControlName="genre">
+                <option *ngFor="let genre of lookupLists.categories" [value]="genre">{{genre}}</option>
+            </select>
+        </div>
+        <div class="field">
+            <label for="year">Year</label><br>
+            <input type="text" name="year" id="year" maxLength="4" formControlName="year">
+        </div>
+
+        <!-- form validation messages -->
+        <div *ngIf="form.get('name').hasError('pattern')" class="message is-small is-danger">
+            <div class="message-body">
+                <p>Name has invalid character(s)</p>
+            </div>
+        </div>
+
+        <div *ngIf="form.get('year').errors as yearErrors" class="message is-small is-danger">
+            <div class="message-body">
+                <p>Year must be between {{yearErrors.year.min}} and {{yearErrors.year.max}}</p>
+            </div>
+        </div>
+
+
+        <div class="field">
+        <input value="Add" type="submit" class="button is-small is-success" [disabled]="!form.valid">
+        
+        </div>
+</form>

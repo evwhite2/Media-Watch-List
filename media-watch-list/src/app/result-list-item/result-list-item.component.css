@@ -1,0 +1,84 @@
+
+.dets{
+  margin-top: 1em;
+  font-size: 22px;
+}
+.button{
+  float: right;
+  margin-top:1.2em;
+  margin-left: .2em;
+}
+p{
+  font-family: 'Arial Narrow', Arial, sans-serif;
+  font-size: 0.80em;
+  padding-top:5px;
+  padding-bottom: 3px;
+}
+.poster{
+  position: relative;  
+  float: right;
+  width: 20vh;
+  height: 30vh;
+  overflow: hidden;
+}
+
+:host {
+    display: flex;
+    flex-direction: column;
+    width: 45vh;
+    height: 55vh;
+    border: 2px solid;
+    background-color: #29394b;
+    padding: 10px;
+    color: #bdc2c5;
+  }
+  span {
+    font-size: 2.3em;
+  }
+  :host.medium-movies {
+    border-color: #53ace4;
+  }
+  :host.medium-movies > h2 {
+    color: #53ace4;
+  }
+  :host.medium-series {
+    border-color: #45bf94;
+  }
+  :host.medium-series > h2 {
+    color: #45bf94;
+  }
+  
+
+  @media only screen and (max-width: 770px){
+    .dets{
+      align-self: center;
+      margin-top: 1em;
+      font-size: 16px;
+      overflow: hidden;
+    }
+    .button{
+      margin-top:.2em;
+      margin-left: .2em;
+    }
+
+    .poster{
+      align-self: center;
+      width: 17vh;
+      height: 22vh;
+    }
+
+    :host {
+      width: 35vh;
+      height: 47vh;
+      border: 2px solid;
+      background-color: #29394b;
+      padding: 5px;
+      color: #bdc2c5;
+    }
+    span{
+      font-size: 1.5em;
+
+    }
+   
+  
+  }
